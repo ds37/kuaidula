@@ -1,0 +1,2 @@
+(function($){$.fn.fitText=function(kompressor,options){var compressor=kompressor||1,settings=$.extend({'minFontSize':80/*Number.NEGATIVE_INFINITY 字体大小最小值的设定，原来是无穷小*/,'maxFontSize':Number.POSITIVE_INFINITY},options);return this.each(function(){var $this=$(this);var resizer=function(){$this.css('font-size',Math.max(Math.min($this.width()/ (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+};resizer();$(window).on('resize.fittext orientationchange.fittext',resizer);});};})(jQuery);
